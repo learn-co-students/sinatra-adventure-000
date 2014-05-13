@@ -1,6 +1,7 @@
 ---
 tags: sinatra, rack, routes
 languages: ruby
+  resources: 2
 ---
 
 # Sinatra XYZZY
@@ -33,3 +34,7 @@ edit most of the files inside of app/.
 Fork this repository and push your solution to your own repository on a
 master branch. Make sure you've followed all the instructions in the
 various files!
+
+## Resources
+* [Sinatra Up and Running](http://books.flatironschool.com/books/101) - [Chapter 5 Hands On: Your Own Blog Engine](http://books.flatironschool.com/books/101), page 103
+* [StackOverflow](http://stackoverflow.com/) - [What is a very simple authentication scheme for Sinatra/Rack](http://stackoverflow.com/questions/3559824/what-is-a-very-simple-authentication-scheme-for-sinatra-rack)
