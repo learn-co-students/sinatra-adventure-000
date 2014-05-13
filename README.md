@@ -1,6 +1,6 @@
 ---
-tags: sinatra, rack, routes
-languages: ruby
+  tags: sinatra, rack, routes
+  languages: ruby
   resources: 2
 ---
 
