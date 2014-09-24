@@ -1,5 +1,5 @@
 ---
-  tags: sinatra, rack, routes
+  tags: sinatra, rack, routes, sessions
   languages: ruby
   resources: 2
 ---
