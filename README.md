@@ -32,7 +32,7 @@ edit most of the files inside of app/.
 # Deliverables
 
 Fork this repository and push your solution to your own repository on a
-master branch. Make sure you've followed all the instructions in the
+solution branch. Make sure you've followed all the instructions in the
 various files!
 
 ## Resources
