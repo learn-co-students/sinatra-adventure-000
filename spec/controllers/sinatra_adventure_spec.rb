@@ -6,7 +6,9 @@ describe 'Home Page' do
 	end
 
   it "contains a link to the registration page" do
-  	expect(page).to have_css("a[href*='register']")
+  	expect(page).to have_css('a[href*="register"]')
+    click_link('Register')
+    expect(current_path).to eq('/register')
   end
 end
 
@@ -43,8 +45,8 @@ describe 'Registration' do
     end
 
     it "has a link that redirects to a grue" do
-      click_link('xyzzy')
-      expect(page).to have_content('You are likely to be eaten by a grue.')
+      click_link('this link')
+      expect(current_path).to eq('/xyzzy')
     end
   end
 end
