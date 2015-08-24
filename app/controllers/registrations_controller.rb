@@ -4,6 +4,10 @@ class RegistrationsController < ApplicationController
     erb :register
   end
 
+  post "/register" do
+    session[:info] = [params[:name], params[:email]]
+    redirect "/new"
+  end
   # Registration!
   # You'll need a way to send the registration form here.
   # Use your battle-hardened text editor to create the
@@ -19,6 +23,7 @@ class RegistrationsController < ApplicationController
 
   get '/new' do
     redirect '/register' unless user_registered?
+    @email = session[:info][1]
     # keep this line of code in place to protect this sacred
     # page from interlopers who have not properly completed
     # the maze you are constructing. You will need to implement
@@ -38,11 +43,10 @@ class RegistrationsController < ApplicationController
   # them what they've done wrong?
 
   def user_registered?
-    session[:info] = [params[:name], params[:email]]
-    if session[:info] == nil
-      return false
+    if session[:info]
+      return true
     end
-    true
+    false
   end
 
 end
