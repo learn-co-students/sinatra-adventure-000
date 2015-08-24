@@ -4,18 +4,11 @@ class RegistrationsController < ApplicationController
     erb :register
   end
 
-  # Registration!
-  # You'll need a way to send the registration form here.
-  # Use your battle-hardened text editor to create the
-  # appropriate route, look at the request, and then
-  # direct them to the new user page via the /new route.
-
-  # TODO: Create a route that handles a POST HTTP request from the
-  # registration form, then see what /new has to say.
-
-  # Note: you aren't creating persistence for a user. This
-  # is a very dumb, single-request registration process.
-  # It is the wise adventurer that doesn't overthink the task!
+  post '/new' do
+    @email = params[:email]
+    password = params[:password]
+    erb :new_user
+  end
 
 
   get '/new' do
