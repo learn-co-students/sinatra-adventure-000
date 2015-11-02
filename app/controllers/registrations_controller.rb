@@ -17,9 +17,16 @@ class RegistrationsController < ApplicationController
   # is a very dumb, single-request registration process.
   # It is the wise adventurer that doesn't overthink the task!
 
+  post '/new' do
+    session[:name] = params[:name]
+    session[:email] = params[:email]
+    erb :new_user
+  end
 
   get '/new' do
-    throw Unauthorized unless user_registered?
+    # doesn't work for some reason...
+    #throw Unauthorized unless user_registered?
+    halt 403, "You are not authorized to see this page, please <a href='/register'>Register</a>" unless user_registered?
     # keep this line of code in place to protect this sacred
     # page from interlopers who have not properly completed
     # the maze you are constructing. You will need to implement
@@ -32,6 +39,7 @@ class RegistrationsController < ApplicationController
     # have completed their quest
 
     # TODO: render the new user template and see what it says.
+    erb :new_user
   end
   # Bonus experience! The throw above makes an ugly error page happen.
   # Can you check for the same condition, but send them back to
@@ -41,7 +49,7 @@ class RegistrationsController < ApplicationController
   def user_registered?
     # TODO: you'll need a way for your registration to set a value that
     # will make this true when your /new looks at it.
-    false
+    session[:name] != nil
   end
 
 end
