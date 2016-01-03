@@ -24,7 +24,7 @@ class RegistrationsController < ApplicationController
   end
 
   post "/handler" do
-    session[:email] = params[:email_address]
+    session[:email] = params[:email]
     session[:password] = params[:password]
     redirect "/new"
   end
@@ -35,7 +35,11 @@ class RegistrationsController < ApplicationController
 
 
   get '/new' do
-    throw Unauthorized unless user_registered?
+    #throw Unauthorized unless user_registered?  
+    ### this line doesn't work
+    ### error: 'uninitialized constant RegistrationsController::Unauthorized' 
+    ### so I replaced with the following:
+    halt(403) unless user_registered? 
     # keep this line of code in place to protect this sacred
     # page from interlopers who have not properly completed
     # the maze you are constructing. You will need to implement
