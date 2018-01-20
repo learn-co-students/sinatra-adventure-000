@@ -41,7 +41,7 @@ describe 'Registration' do
     end
 
     it "displays the email address used on registration" do
-      expect(page).to have_content('chang@flatironschool.com')    
+      expect(page).to have_content('chang@flatironschool.com')
     end
 
     it "has a link that redirects to a grue" do
